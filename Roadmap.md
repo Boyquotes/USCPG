@@ -1,8 +1,9 @@
 # Roadmap
 
 ## What is Roadmap?
-[b]Roadmap is a todo-list for programmers[/b]
+**IDK, but, i think, it's todo-list analog**
 
+##Roadmap points:
 1. Weapon (SINGLEPLAYER) - ❎
   1. Melee - ❎
   2. Shotgun or Rifle - ❎
