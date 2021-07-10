@@ -1,19 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Fonts/thai_40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=2]
 [ext_resource path="res://Textures/BG.jpg" type="Texture" id=3]
 [ext_resource path="res://Sprites/gradient.png" type="Texture" id=4]
 [ext_resource path="res://Textures/logo2.png" type="Texture" id=5]
+[ext_resource path="res://Textures/BG.png" type="Texture" id=6]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="BG2" type="Sprite" parent="."]
+position = Vector2( 480, 320 )
+texture = ExtResource( 6 )
+
 [node name="BG" type="Sprite" parent="."]
-position = Vector2( 482.757, 322.859 )
+visible = false
+position = Vector2( 480, 320 )
 texture = ExtResource( 3 )
 
-[node name="logo2" type="Sprite" parent="."]
+[node name="Logo" type="Sprite" parent="."]
 position = Vector2( 387.892, 106.308 )
 texture = ExtResource( 5 )
 __meta__ = {
