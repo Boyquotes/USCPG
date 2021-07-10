@@ -1,0 +1,163 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/thai_40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=2]
+[ext_resource path="res://Textures/BG.jpg" type="Texture" id=3]
+[ext_resource path="res://Sprites/gradient.png" type="Texture" id=4]
+[ext_resource path="res://Textures/logo2.png" type="Texture" id=5]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 482.757, 322.859 )
+texture = ExtResource( 3 )
+
+[node name="logo2" type="Sprite" parent="."]
+position = Vector2( 387.892, 106.308 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Version" type="Label" parent="."]
+margin_left = 4.0
+margin_top = 373.0
+margin_right = 540.0
+margin_bottom = 601.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Version 2.0.0
+First weapon & camera rotation
+(SINGLEPLAYER)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="."]
+margin_top = -2.0
+margin_right = 1024.0
+margin_bottom = 598.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="Container"]
+margin_left = 910.0
+margin_top = 519.0
+margin_right = 1023.0
+margin_bottom = 599.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.27451, 0.027451, 0.027451, 1 )
+text = "QUIT"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="Container"]
+margin_left = 817.0
+margin_top = 287.0
+margin_right = 1024.0
+margin_bottom = 367.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 1, 0.490196, 1 )
+text = "START GAME"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Container"]
+margin_left = 880.826
+margin_top = 406.037
+margin_right = 1023.83
+margin_bottom = 486.037
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.572549, 0, 1 )
+text = "OPTIONS"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gradient" type="Sprite" parent="."]
+visible = false
+position = Vector2( 512, 300 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Container2" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SingleButton" type="Button" parent="Container2"]
+margin_left = 782.0
+margin_top = 287.0
+margin_right = 1024.0
+margin_bottom = 367.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.360784, 0.360784, 1 )
+text = "SINGLEPLAYER"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="Container2"]
+margin_left = 919.0
+margin_top = 520.0
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.360784, 0.360784, 1 )
+text = "Close"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinButton" type="Button" parent="Container2"]
+anchor_left = -0.0314972
+anchor_right = -0.0314972
+margin_left = 787.26
+margin_top = 347.0
+margin_right = 873.26
+margin_bottom = 427.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.882353, 0.203922, 1 )
+text = "JOIN"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostButton" type="Button" parent="Container2"]
+margin_left = 926.351
+margin_top = 344.863
+margin_right = 1012.35
+margin_bottom = 424.863
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+text = "HOST"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Container/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="Container/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Container2/SingleButton" to="." method="_on_SingleButton_pressed"]
+[connection signal="pressed" from="Container2/CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="Container2/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="Container2/HostButton" to="." method="_on_HostButton_pressed"]

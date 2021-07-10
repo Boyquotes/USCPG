@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SCP 1123 Containment Chamber.obj-0155575ed34d05856d4766cc368ea45b.mesh"
+
+[deps]
+
+files=[ "res://.import/SCP 1123 Containment Chamber.obj-0155575ed34d05856d4766cc368ea45b.mesh" ]
+
+source_file="res://scp rooms/cont1123/SCP 1123 Containment Chamber.obj"
+dest_files=[ "res://.import/SCP 1123 Containment Chamber.obj-0155575ed34d05856d4766cc368ea45b.mesh", "res://.import/SCP 1123 Containment Chamber.obj-0155575ed34d05856d4766cc368ea45b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
