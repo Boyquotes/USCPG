@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Виндяй Моя Дочь Культист Remix Lins.mp3-00671baf0e1942a1ee92d1cd9d4b2c7f.mp3str"
+
+[deps]
+
+source_file="res://Sounds/AprilFools/Виндяй Моя Дочь Культист Remix Lins.mp3"
+dest_files=[ "res://.import/Виндяй Моя Дочь Культист Remix Lins.mp3-00671baf0e1942a1ee92d1cd9d4b2c7f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

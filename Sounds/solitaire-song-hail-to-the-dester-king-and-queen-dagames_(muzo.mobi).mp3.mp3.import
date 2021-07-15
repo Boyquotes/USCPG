@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/solitaire-song-hail-to-the-dester-king-and-queen-dagames_(muzo.mobi).mp3.mp3-c29b49dac501924086b0869720ddd75c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/solitaire-song-hail-to-the-dester-king-and-queen-dagames_(muzo.mobi).mp3.mp3"
+dest_files=[ "res://.import/solitaire-song-hail-to-the-dester-king-and-queen-dagames_(muzo.mobi).mp3.mp3-c29b49dac501924086b0869720ddd75c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
