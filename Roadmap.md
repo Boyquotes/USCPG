@@ -9,4 +9,6 @@
 
 3. Music in menu - ✅
 
+4. In-game music - ✅|❎
+
 4. New player controller - ✅|❎
