@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Fonts/5x7-dot-matrix-character-lcd_24.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://Sprites/gradient.png" type="Texture" id=4]
 [ext_resource path="res://Textures/logo2.png" type="Texture" id=5]
 [ext_resource path="res://Textures/BG.png" type="Texture" id=6]
-[ext_resource path="res://Sounds/AprilFools/Обычный парень — Виндяй Remix - ポルノ (by Обычный Парень).mp3" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/solitaire-song-hail-to-the-dester-king-and-queen-dagames_(muzo.mobi).mp3.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Scripts/FPSCounter.gd" type="Script" id=8]
 [ext_resource path="res://Fonts/plane-crush_40.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Fonts/5x7-dot-matrix-character-lcd.tres" type="DynamicFont" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -17,7 +19,6 @@ position = Vector2( 480, 320 )
 texture = ExtResource( 6 )
 
 [node name="BG" type="Sprite" parent="."]
-visible = false
 position = Vector2( 480, 320 )
 texture = ExtResource( 3 )
 
@@ -29,64 +30,16 @@ __meta__ = {
 }
 
 [node name="Version" type="Label" parent="."]
-margin_top = 523.0
+margin_top = 509.0
 margin_right = 604.0
 margin_bottom = 601.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Version 2.0.0
+text = "Version 2.0.0 Alpha 4
 First weapon & camera rotation
 (SINGLEPLAYER)"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Container" type="Control" parent="."]
-margin_top = -2.0
-margin_right = 1024.0
-margin_bottom = 598.0
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="QuitButton" type="Button" parent="Container"]
-margin_left = 900.0
-margin_top = 519.0
-margin_right = 1024.0
-margin_bottom = 571.0
-custom_fonts/font = ExtResource( 9 )
-custom_colors/font_color = Color( 0.27451, 0.027451, 0.027451, 1 )
-text = "quit"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="StartButton" type="Button" parent="Container"]
-margin_left = 696.0
-margin_top = 337.0
-margin_right = 1024.0
-margin_bottom = 389.0
-custom_fonts/font = ExtResource( 9 )
-custom_colors/font_color = Color( 0, 1, 0, 1 )
-text = "start game"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="Container"]
-margin_left = 800.0
-margin_top = 426.0
-margin_right = 1024.0
-margin_bottom = 478.0
-custom_fonts/font = ExtResource( 9 )
-custom_colors/font_color = Color( 0.662745, 0.32549, 0, 1 )
-text = "options"
-flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -99,7 +52,66 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Container2" type="Control" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="Control"]
+margin_top = -2.0
+margin_right = 1024.0
+margin_bottom = 598.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="Control/Container"]
+margin_left = 900.0
+margin_top = 519.0
+margin_right = 1024.0
+margin_bottom = 571.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.27451, 0.027451, 0.027451, 1 )
+text = "quit"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="Control/Container"]
+margin_left = 696.0
+margin_top = 337.0
+margin_right = 1024.0
+margin_bottom = 389.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+text = "start game"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Button" parent="Control/Container"]
+margin_left = 800.0
+margin_top = 426.0
+margin_right = 1024.0
+margin_bottom = 478.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.662745, 0.32549, 0, 1 )
+text = "options"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container2" type="Control" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -108,7 +120,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SingleButton" type="Button" parent="Container2"]
+[node name="SingleButton" type="Button" parent="Control/Container2"]
 margin_left = 604.0
 margin_top = 336.0
 margin_right = 1024.0
@@ -121,7 +133,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CloseButton" type="Button" parent="Container2"]
+[node name="CloseButton" type="Button" parent="Control/Container2"]
 margin_left = 842.0
 margin_top = 517.0
 margin_right = 1024.0
@@ -134,7 +146,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="JoinButton" type="Button" parent="Container2"]
+[node name="JoinButton" type="Button" parent="Control/Container2"]
 anchor_left = -0.0314972
 anchor_right = -0.0314972
 margin_left = 604.26
@@ -149,7 +161,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HostButton" type="Button" parent="Container2"]
+[node name="HostButton" type="Button" parent="Control/Container2"]
 margin_left = 876.0
 margin_top = 424.0
 margin_right = 1025.0
@@ -162,13 +174,52 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-autoplay = true
+[node name="Control" type="Control" parent="Control"]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 761.961, 387 )
 
-[connection signal="pressed" from="Container/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="pressed" from="Container/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="Container2/SingleButton" to="." method="_on_SingleButton_pressed"]
-[connection signal="pressed" from="Container2/CloseButton" to="." method="_on_CloseButton_pressed"]
-[connection signal="pressed" from="Container2/JoinButton" to="." method="_on_JoinButton_pressed"]
-[connection signal="pressed" from="Container2/HostButton" to="." method="_on_HostButton_pressed"]
+[node name="CheckButton" type="CheckButton" parent="Control/Control"]
+margin_left = 595.174
+margin_top = 333.404
+margin_right = 1016.17
+margin_bottom = 387.404
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.329412, 0.0156863, 0.0156863, 1 )
+text = "fps counter"
+flat = true
+
+[node name="OptCloseButton" type="Button" parent="Control/Control"]
+margin_left = 844.859
+margin_top = 516.854
+margin_right = 1021.86
+margin_bottom = 568.854
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.101961, 0.0627451, 0.0627451, 1 )
+text = "close"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FPSCounter" type="Label" parent="."]
+margin_top = 1.0
+margin_right = 136.0
+margin_bottom = 41.0
+custom_fonts/font = ExtResource( 10 )
+text = "FPS:"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/Container/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="Control/Container/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Control/Container/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Control/Container2/SingleButton" to="." method="_on_SingleButton_pressed"]
+[connection signal="pressed" from="Control/Container2/CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="Control/Container2/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="Control/Container2/HostButton" to="." method="_on_HostButton_pressed"]
+[connection signal="pressed" from="Control/Control/CheckButton" to="." method="_on_CheckButton_pressed"]
+[connection signal="pressed" from="Control/Control/OptCloseButton" to="." method="_on_OptCloseButton_pressed"]

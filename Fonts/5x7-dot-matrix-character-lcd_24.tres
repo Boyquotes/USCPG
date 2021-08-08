@@ -1,0 +1,8 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://Fonts/Sources/5x7-dot-matrix-character-lcd-font.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 24
+outline_size = 4
+font_data = ExtResource( 1 )

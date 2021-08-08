@@ -1,21 +1,17 @@
 extends Spatial
 
-onready var playerPos = $Spawn
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var player_pos = $Spawn
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	var player = preload("res://Scenes/Player2.tscn").instance()
-	player.set_name(str(get_tree().get_network_unique_id()))
-	player.set_network_master(get_tree().get_network_unique_id())
-	player.global_transform = playerPos.global_transform
+	player.global_transform = player_pos.global_transform
 	add_child(player)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(_delta):
+	if GameRun.show_counter == 0:
+		$FPSCounter.hide()
+	if GameRun.show_counter == 1:
+		$FPSCounter.show()

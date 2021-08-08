@@ -1,11 +1,22 @@
 extends KinematicBody
 
+onready var cam = $Camera
+
 var speed = 6
+var mouse_sense = 1
 
 var direction = Vector3()
 
 func _ready():
-	pass
+	#hides the cursor
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _input(event):
+	#get mouse input for camera rotation
+	if event is InputEventMouseMotion:
+		rotation.y += deg2rad(-event.relative.x * mouse_sense)
+		cam.rotation.x += deg2rad(-event.relative.y * mouse_sense)
+		cam.rotation.x = clamp(cam.rotation.x, deg2rad(-90), deg2rad(90))
 
 remote func _set_pos(position):
 	global_transform.origin = position

@@ -1,23 +1,29 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scp rooms/cont1123/SCP 1123 Containment Chamber.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
 [ext_resource path="res://Sounds/AprilFools/Виндяй Моя Дочь Культист Remix Lins.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Models/Rooms/room1/untitled.fbx" type="PackedScene" id=4]
 [ext_resource path="res://Skyboxes/sky_back.jpg" type="Texture" id=5]
+[ext_resource path="res://Fonts/5x7-dot-matrix-character-lcd.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Scripts/FPSCounter.gd" type="Script" id=7]
 
-[sub_resource type="PanoramaSky" id=4]
+[sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 5 )
 
 [sub_resource type="Environment" id=2]
 background_mode = 2
-background_sky = SubResource( 4 )
+background_sky = SubResource( 1 )
 fog_enabled = true
+fog_color = Color( 0.407843, 0.458824, 0.505882, 1 )
 fog_sun_color = Color( 1, 1, 1, 1 )
 tonemap_mode = 3
-dof_blur_far_enabled = true
 
 [sub_resource type="BoxShape" id=3]
+margin = 0.001
+extents = Vector3( 0.5, 50, 20 )
+
+[sub_resource type="BoxShape" id=4]
 margin = 0.001
 extents = Vector3( 20, 0.5, 100 )
 
@@ -418,12 +424,16 @@ material/377 = null
 [node name="StaticBody" type="StaticBody" parent="WorldEnvironment"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 94.8378, 200 )
 
-[node name="CollisionShape" type="CollisionShape" parent="WorldEnvironment/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.17022, 0 )
+[node name="Wall1" type="CollisionShape" parent="WorldEnvironment/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6541, -2.34044, 0 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2" type="CollisionShape" parent="WorldEnvironment/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70853, 1.63377, 20.1914 )
+[node name="Floor" type="CollisionShape" parent="WorldEnvironment/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.17022, 0 )
+shape = SubResource( 4 )
+
+[node name="SCP1123" type="CollisionShape" parent="WorldEnvironment/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 1.6, 20 )
 shape = SubResource( 5 )
 
 [node name="untitled" parent="WorldEnvironment" instance=ExtResource( 4 )]
@@ -432,3 +442,13 @@ transform = Transform( 0.03, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 97.9957, 94.6301, 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="FPSCounter" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 6 )
+text = "FPS:"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
