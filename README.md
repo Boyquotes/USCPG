@@ -1,4 +1,4 @@
-# SCP - Containment Breach Godot Edition
+# SCP - Containment Breach GE
 Just my attempt in FPS games on Godot...?
 
 **Do not work on Godot 4.0**.
