@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Ben Nestor - Ces.mp3-dd57ef973d0f32aa202c576fe57969b9.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Ben Nestor - Ces.mp3"
+dest_files=[ "res://.import/Ben Nestor - Ces.mp3-dd57ef973d0f32aa202c576fe57969b9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
