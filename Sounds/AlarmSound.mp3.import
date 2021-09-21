@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/AlarmSound.mp3-d1255db4adb3d5e405c339cbf6e35f1e.mp3str"
+
+[deps]
+
+source_file="res://Sounds/AlarmSound.mp3"
+dest_files=[ "res://.import/AlarmSound.mp3-d1255db4adb3d5e405c339cbf6e35f1e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
