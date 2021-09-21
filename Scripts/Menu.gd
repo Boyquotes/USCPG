@@ -24,15 +24,15 @@ func _on_JoinButton_pressed():
 
 func _connected(client_id):
 	GameRun.user_id = client_id
-	var game = preload("res://Scenes/MPTest.tscn").instance()
+	var game = preload("res://Scenes/mptest.tscn").instance()
 	get_tree().get_root().add_child(game)
 	hide()
 	$AudioStreamPlayer.playing = false
 
 
 func _on_SingleButton_pressed():
-	var game = preload("res://Scenes/test.tscn").instance()
-	get_tree().get_root().add_child(game)
+	var sp = preload("res://Scenes/Test.tscn").instance()
+	get_tree().get_root().add_child(sp)
 	hide()
 	$AudioStreamPlayer.playing = false
 
