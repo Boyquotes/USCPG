@@ -23,8 +23,7 @@ GNU/Linux;
 <br>
 Windows;
 <br>
-macOS (not sure).
-
+OSX (not sure) - PS: From Alpha 6, build packages for macOS X on one's own.
 # Ambient sounds & samples
 ## CC-BY 4.0
 [Ben Nestor - Ces](https://freemusicarchive.org/music/ben-nestor/single/ces)
