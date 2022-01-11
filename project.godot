@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="SCP CB (?) GODOT EDITION"
+config/name="An Untitled SCP Game"
 run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 
