@@ -4,13 +4,8 @@ Just my attempt in FPS games on Godot...? <br>
 <br>
 
 # Special thanks
-[GarbajYT's](https://github.com/GarbajYT) tutorials - camera rotation and improved player controller script
-
-<br>
+[GarbajYT's](https://github.com/GarbajYT) tutorials - camera rotation and improved player controller script <br>
 sd121 - Logo & menu backgrounds
-
-
-<br>
 
 # Placeholder?
 Placeholder?
