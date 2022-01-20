@@ -2,6 +2,7 @@
 Just my attempt in FPS games on Godot...? <br>
 **Do not work on Godot 4.0**.
 <br>
+[Now the main repository here](https://framagit.org/mugenson1kku/USCPG/-/tree/2.0.0)
 
 # Special thanks
 [GarbajYT's](https://github.com/GarbajYT) tutorials - camera rotation and improved player controller script <br>
